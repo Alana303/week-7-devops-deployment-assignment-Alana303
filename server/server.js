@@ -1,20 +1,43 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(morgan('dev')); // Logs every HTTP request to the console
 
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from the backend!' });
+// Connect to MongoDB
+mongoose
+  .connect(process.env.MONGO_URI, {
+    // These options are no longer needed with mongoose 6+
+  })
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
+
+// Routes
+app.get('/', (req, res) => {
+  res.send('Hello from the backend!');
 });
 
-app.get('/health', (req, res) => {
-  res.send('OK');
+// Health Check Endpoint
+app.get('/healthz', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+  });
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
- 
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
