@@ -76,3 +76,53 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [Railway Documentation](https://docs.railway.app/)
 - [Vercel Documentation](https://vercel.com/docs)
 - [Netlify Documentation](https://docs.netlify.com/) 
+
+
+# 📦 Week 7: MERN Deployment and DevOps Assignment
+
+## 🌐 Live URLs
+
+- **Frontend (React/Vercel):**  
+  [https://week-7-devops-deployment-assignment-alana303.vercel.app](https://week-7-devops-deployment-assignment-alana303.vercel.app)
+
+- **Backend (Express/Render):**  
+  [https://week-7-devops-deployment-assignment-mr7a.onrender.com](https://week-7-devops-deployment-assignment-mr7a.onrender.com)
+
+---
+
+## 🚀 Project Overview
+
+This is a full-stack MERN application deployed to production as part of the PLP Week 7 DevOps and Deployment assignment.  
+It demonstrates:
+
+- Cloud deployment using Render (Backend) and Vercel (Frontend)
+- Environment variable management
+- Continuous Integration (CI) using GitHub Actions
+- Monitoring and maintenance best practices
+
+---
+
+## 🛠️ Tech Stack
+
+- **MongoDB Atlas** – cloud-based NoSQL database
+- **Express.js** – backend framework
+- **React.js** – frontend UI
+- **Node.js** – server runtime
+- **Render** – backend deployment
+- **Vercel** – frontend deployment
+- **GitHub Actions** – CI/CD pipeline
+- **Morgan** – HTTP request logging
+
+---
+
+## 🧪 Monitoring Setup
+
+- ✅ Morgan middleware logs all incoming HTTP requests
+- ✅ `/healthz` endpoint for uptime/health checks
+- ❌ (Optional) Winston and Sentry not yet added
+- 🔧 Logs viewable via Render dashboard
+
+---
+
+## 🗂️ Directory Structure
+
