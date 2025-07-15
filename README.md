@@ -126,3 +126,32 @@ It demonstrates:
 
 ## 🗂️ Directory Structure
 
+# ✅ PLP Week 7: MERN Deployment and DevOps Assignment
+
+## 🌐 Live URLs
+- **Frontend (Vercel)**: [https://week-7-devops-deployment-assignment-alana303.vercel.app](https://week-7-devops-deployment-assignment-alana303.vercel.app)
+- **Backend (Render)**: [https://week-7-devops-deployment-assignment-mr7a.onrender.com](https://week-7-devops-deployment-assignment-mr7a.onrender.com)
+
+## 🛠️ Tech Stack
+- MongoDB Atlas
+- Express.js (Node.js)
+- React
+- Vercel (Frontend Hosting)
+- Render (Backend Hosting)
+- GitHub Actions (CI/CD)
+
+## 📁 Folder Structure
+- `/client` → React frontend
+- `/server` → Express backend
+- `.github/workflows/` → CI/CD pipelines
+
+## 🔑 Environment Variables
+
+Create a `.env` file in the `/server` folder using this template:
+
+```env
+PORT=5000
+MONGO_URI=your_mongo_uri_here
+JWT_SECRET=your_jwt_secret_here
+
+
